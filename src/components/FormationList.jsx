@@ -26,7 +26,7 @@ const LIST = [
     },
     {
         title: "Baccalaureat Éconnomique et Social",
-        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, minus. Sunt quod corrupti tempora nihil atque, harum non aliquam doloribus quae nostrum quia dolore molestias.',
+        desc: '',
         school: "Lycée Edouard Schurre",
         techno: [],
         duration: "2 ans",
