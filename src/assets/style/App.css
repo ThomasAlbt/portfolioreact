@@ -73,8 +73,8 @@ body {
 
 .titles {
     position: fixed;
-    bottom: 5%;
-    left : 5%;
+    bottom: 3vw;
+    left : 3vw;
     font-size: 3rem;
     padding: 0.2rem;
 
@@ -94,8 +94,8 @@ body {
 h2 {
     font-size: 5rem;
     position: fixed;
-    bottom: 3%;
-    left : 5%;
+    bottom: 3vw;
+    left : 3vw;
 }
 
 
@@ -121,6 +121,10 @@ ul {
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+#link {
+    text-align: center;
 }
 
 .techno {
@@ -273,4 +277,99 @@ button {
     text-align: center;
     font-size: 7rem;
     animation: validation-pop 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* ----- TABLETTE ----- */
+
+@media (max-width: 1024px) and (min-width: 600px) {
+  h1, h2 {
+    font-size: 3rem;
+  }
+
+  .validation {
+    font-size: 4rem;
+  }
+
+  textarea {
+    height: 25vh;
+    font-size: 1.8rem;
+  }
+
+  .embla {
+    height: 60vh;
+  }
+}
+
+/* ----- DESKTOP ----- */
+
+@media (min-width: 1025px) {
+  h1, h2 {
+    font-size: 6rem;
+  }
+
+  .titles {
+    font-size: 6rem;
+  }
+
+  .paragraphe {
+    max-width: 50vw;
+  }
+
+  .validation {
+    font-size: 10rem;
+  }
+
+  textarea {
+    height: 40vh;
+    font-size: 2rem;
+  }
+
+  .techno,
+  .git,
+  .time,
+  .note,
+  .school,
+  .time-formation {
+    width: 48vw;
+    align-content: center;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .git {
+    font-size: 4rem;
+  }
+
+  #warning {
+    font-size: 4rem;
+    margin: auto;
+  }
+
+  #link {
+    width: 100vw;
+  }
+
+  .title {
+    width: 100vw;
+    font-size: 6rem;
+  }
+  .desc {
+    width: 48vw;
+    margin: auto;
+  }
+
+  .embla__slide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .embla {
+    height: 50vh;
+  }
+
+  .embla__next,
+  .embla__prev {
+    bottom: 15%;
+  }
 }

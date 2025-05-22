@@ -1,7 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("secret code");
+  const [state, handleSubmit] = useForm("xeognbkj");
 
   if (state.succeeded) {
     return (
@@ -22,7 +22,6 @@ const Contact = () => {
           type="email"
           name="email"
           required
-          style={{ marginLeft: "1rem" }}
         />
         <ValidationError 
           prefix="Email" 
@@ -36,7 +35,6 @@ const Contact = () => {
           id="message"
           name="message"
           required
-          style={{ marginLeft: "1rem" }}
         />
         <ValidationError 
           prefix="Message" 

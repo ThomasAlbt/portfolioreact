@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
 import { useLocation } from "react-router";
@@ -37,6 +37,14 @@ const getVantaColors = (pathname) => {
         baseColor: 0x0a050f,
         blurFactor: 0.90,
       };
+    case "/Contact":
+      return {
+        highlightColor: 0xffb3cb,
+        midtoneColor: 0xffb3cb,
+        lowlightColor: 0x4a2a5a,
+        baseColor: 0x0a050f,
+        blurFactor: 0.90,
+      };
     default:
       return {
         highlightColor: 0xffc3a0,
@@ -48,9 +56,19 @@ const getVantaColors = (pathname) => {
   }
 };
 
+function lerpColor(a, b, t) {
+  const ar = (a >> 16) & 0xff, ag = (a >> 8) & 0xff, ab = a & 0xff;
+  const br = (b >> 16) & 0xff, bg = (b >> 8) & 0xff, bb = b & 0xff;
+  const rr = Math.round(ar + (br - ar) * t);
+  const rg = Math.round(ag + (bg - ag) * t);
+  const rb = Math.round(ab + (bb - ab) * t);
+  return (rr << 16) | (rg << 8) | rb;
+}
+
 const VantaBackground = () => {
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
+  const prevColors = useRef(getVantaColors("/"));
   const location = useLocation();
   const {
     highlightColor,
@@ -61,49 +79,57 @@ const VantaBackground = () => {
   } = getVantaColors(location.pathname);
 
   useEffect(() => {
-  if (!vantaEffect.current) {
-    vantaEffect.current = FOG({
-      el: vantaRef.current,
-      THREE: THREE,
-      highlightColor,
-      midtoneColor,
-      lowlightColor,
-      baseColor,
-      blurFactor
-    });
-  } else {
-    // Only update options, don't destroy/recreate
-    vantaEffect.current.setOptions({
-      highlightColor,
-      midtoneColor,
-      lowlightColor,
-      baseColor,
-      blurFactor
-    });
-  }
-  // Only clean up on unmount
-  return () => {
-    if (vantaEffect.current) {
-      vantaEffect.current.destroy();
-      vantaEffect.current = null;
+    if (!vantaEffect.current) {
+      vantaEffect.current = FOG({
+        el: vantaRef.current,
+        THREE: THREE,
+        highlightColor,
+        midtoneColor,
+        lowlightColor,
+        baseColor,
+        blurFactor
+      });
     }
-  };
-  // Only run on mount/unmount
-  // eslint-disable-next-line
-}, []);
+    return () => {
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+        vantaEffect.current = null;
+      }
+    };
+  }, []);
 
-// Add a separate effect to update options when colors change
-useEffect(() => {
-  if (vantaEffect.current) {
-    vantaEffect.current.setOptions({
-      highlightColor,
-      midtoneColor,
-      lowlightColor,
-      baseColor,
-      blurFactor
-    });
-  }
-}, [highlightColor, midtoneColor, lowlightColor, baseColor, blurFactor]);
+  useEffect(() => {
+    if (!vantaEffect.current) return;
+
+    const steps = 24;
+    const duration = 200;
+    const interval = duration / (steps + 1);
+
+    const from = prevColors.current;
+    const to = { highlightColor, midtoneColor, lowlightColor, baseColor, blurFactor };
+
+    let step = 0;
+
+    function animateStep() {
+      step++;
+      const t = step / (steps + 1);
+      vantaEffect.current.setOptions({
+        highlightColor: lerpColor(from.highlightColor, to.highlightColor, t),
+        midtoneColor: lerpColor(from.midtoneColor, to.midtoneColor, t),
+        lowlightColor: lerpColor(from.lowlightColor, to.lowlightColor, t),
+        baseColor: lerpColor(from.baseColor, to.baseColor, t),
+        blurFactor: from.blurFactor + (to.blurFactor - from.blurFactor) * t
+      });
+      if (step < steps + 1) {
+        setTimeout(animateStep, interval);
+      } else {
+        vantaEffect.current.setOptions(to);
+        prevColors.current = to;
+      }
+    }
+
+    animateStep();
+  }, [highlightColor, midtoneColor, lowlightColor, baseColor, blurFactor]);
 
   return (
     <div

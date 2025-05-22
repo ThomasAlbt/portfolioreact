@@ -27,6 +27,7 @@ function App() {
             <Header/>
             <Routes>
               <Route path="/" element={<Home/>}/>
+              <Route path="/Acceuil" element={<Home/>}/>
               <Route path="/About" element={<About/>}/>
               <Route path="/Project" element={<Project/>}/>
               <Route path="/Formations" element={<Formations/>}/>

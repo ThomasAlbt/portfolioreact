@@ -7,7 +7,7 @@ const LIST = [
         timeTook: "2 jours",
         stillWorkin: true,
         satisfaction: 5,
-        github: "",
+        github: "https://github.com/ThomasAlbt/portfolioreact",
     },
     {
         title: "Copie de Discord en PHP",
@@ -17,6 +17,7 @@ const LIST = [
         stillWorkin: true,
         satisfaction: 5,
         github: "https://github.com/ThomasAlbt/",
+        link: "https://thomasfullstack.fr/chat/index.php"
     },
     {
         title: "ReactF1",
@@ -26,15 +27,17 @@ const LIST = [
         stillWorkin: true,
         satisfaction: 7,
         github: "https://github.com/ThomasAlbt/f1dataapp",
+        link: "https://thomasfullstack.fr/ReactF1/dist/index.html"
     },
     {
-        title: "Premier PF",
+        title: "Premier Portfolio",
         desc: 'Mon premier portfolio, développé en HTML, SASS et JavaScript pur, a été une étape importante dans mon parcours. Ce projet m\'a permis de mettre l\'accent sur le design et l\'expérience utilisateur (UX), marquant ainsi le début de mon intérêt pour la création de sites web esthétiques et fonctionnels.',
         timeTook: "Moins d'une semaine en période de cours",
         techno: ["HTML5", "JavaScript", "SASS"],
         stillWorkin: true,
         satisfaction: 8 ,
         github: "https://github.com/ThomasAlbt/portfolio",
+        link: "https://thomasfullstack.fr/OldPF/index.html"
     },
 ]
 
