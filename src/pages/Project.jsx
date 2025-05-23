@@ -32,7 +32,7 @@ const Project = () => {
                             </li>
                             <div id='links-project'>
                                 <li className='git'><a href={result.github} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} color="white"/></a></li>
-                                <li id='link'>{result.link ? <a href={result.link} target='blank'>Regarder par vous même !</a> : null}</li>
+                                <li id='link'>{result.link ? <a href={result.link} target='blank'>Regarder par vous même !</a> : <p>Vous êtes déjà dessus</p>}</li>
                             </div>
                             <li className="time">{result.timeTook}</li>
                             <li className='desc'>{result.desc}</li>
