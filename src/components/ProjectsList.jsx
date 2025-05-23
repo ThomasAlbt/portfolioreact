@@ -13,7 +13,7 @@ const LIST = [
         title: "Copie de Discord en PHP",
         desc: 'J\'ai développé une copie de Discord en PHP, en mettant l\'accent sur la programmation orientée objet et la sécurité du site. Ce projet inclut une base de données MySQL gérée avec phpMyAdmin, ce qui m\'a permis de renforcer mes compétences en gestion de bases de données et en développement back-end sécurisé.',
         techno: ["PHP", "MySQL", "Codé en POO"],
-        timeTook: "Une semaine et demi",
+        timeTook: "Une semaine",
         stillWorkin: true,
         satisfaction: 5,
         github: "https://github.com/ThomasAlbt/",
