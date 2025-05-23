@@ -30,8 +30,10 @@ const Formations = () => {
                                     ))}
                                 </ul>
                             </li>
-                            <li className="school">{result.school}</li>
-                            <li className="time-formation">{result.duration}</li>
+                            <div id='school-infos'>
+                                <li className="school">{result.school}</li>
+                                <li className="time-formation">{result.duration}</li>
+                            </div>
                             <li className='desc'>{result.desc}</li>
                             {result.current ? <li id='warning'><FontAwesomeIcon icon={faTriangleExclamation} color="orange"/> Ceci est ma formation actuelle dont je recherche une alternance. <FontAwesomeIcon icon={faTriangleExclamation} color="orange"/></li> : null }
                         </ul>

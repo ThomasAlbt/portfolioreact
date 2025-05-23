@@ -105,7 +105,7 @@ ul {
     padding-top: 1rem;
 
     li {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 }
 
@@ -155,6 +155,18 @@ ul {
     }
 }
 
+#school-infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.school,
+.time-formation {
+  max-width: 45vw;
+  font-size: 2rem;
+}
+
 .time-formation {
 
     &:before {
@@ -162,10 +174,8 @@ ul {
     }
 }
 
-
-.school {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+#warning {
+  font-weight: bold;
 }
 
 /* ----- CAROUSEL ----- */
@@ -330,10 +340,15 @@ button {
   .note,
   .school,
   .time-formation {
-    width: 48vw;
+    width: 100vw;
     align-content: center;
     font-size: 3rem;
     text-align: center;
+  }
+
+  .techno-list,
+  #school-infos {
+    margin: auto;
   }
 
   .git {
