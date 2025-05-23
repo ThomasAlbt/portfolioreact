@@ -125,6 +125,10 @@ ul {
 
 #link {
     text-align: center;
+
+    a {
+      color: white;
+    }
 }
 
 .techno {
@@ -155,10 +159,12 @@ ul {
     }
 }
 
-#school-infos {
+#school-infos,
+#links-project {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
 .school,
@@ -360,8 +366,9 @@ button {
     margin: auto;
   }
 
-  #link {
-    width: 100vw;
+  #link,
+  .git {
+    width: 50vw;
   }
 
   .title {
