@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router";
 
-const routes = ["/", "/About", "/Project", "/Formations", "/Contact"];
+const routes = ["/", "/About", "/Stack", "/Project", "/Formations", "/Contact"];
 
 const ScrollBehavior = ({ children }) => {
     const navigate = useNavigate();

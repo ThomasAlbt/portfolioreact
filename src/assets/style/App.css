@@ -48,7 +48,7 @@ header {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     z-index: 90;
 }
 
@@ -56,8 +56,8 @@ header {
 .open a {
     text-decoration: none;
     color: white;
-    font-size: 4em;
-    padding: 3rem;
+    font-size: 3rem;
+    padding-left: 3rem;
 }
 
 h1 {
@@ -89,6 +89,10 @@ body {
     position: fixed;
     bottom: 15%;
     left : 6%;
+
+    p:nth-of-type(2) {
+      padding-top: 1rem;
+    }
 }
 
 h2 {
@@ -215,7 +219,6 @@ ul {
     justify-content: center;
 }
 
-
 .embla__prev {
     left: 5%;
 
@@ -235,6 +238,56 @@ ul {
     height: auto;
     filter: invert(1);
 }
+
+/* ----- Logo for the stacks ----- */
+
+.techno-list {
+
+  li {
+    align-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.ReactJS::before,
+.HTML5::before,
+.CSS::before,
+.SCSS::before,
+.Tailwind::before,
+.JavaScript::before,
+.Vite::before,
+.VueJS::before, 
+.NodeJS::before,
+.PHP::before,
+.MySQL::before, 
+.Git::before,
+.GitHub::before,
+.Vercel::before {
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+}
+
+.ReactJS::before { background-image: url('../svg/react.svg'); }
+.HTML5::before { background-image: url('../svg/html.svg'); }
+.CSS::before { background-image: url('../svg/css.svg'); }
+.SCSS::before { background-image: url('../svg/sass.svg'); }
+.Tailwind::before { background-image: url('../svg/tailwind.svg'); }
+.JavaScript::before { background-image: url('../svg/javascript.svg'); }
+.Vite::before { background-image: url('../svg/vitejs.svg'); }
+.VueJS::before { background-image: url('../svg/vue.svg'); }
+.NodeJS::before { background-image: url('../svg/nodejs.svg'); }
+.PHP::before { background-image: url('../svg/php.svg'); }
+.MySQL::before { background-image: url('../svg/mysql.svg'); }
+.Git::before { background-image: url('../svg/git.svg'); }
+.GitHub::before { background-image: url('../svg/github.svg'); }
+.Vercel::before { background-image: url('../svg/vercel.svg'); }
 
 /* ----- FOOTER/CONTACTFORM ----- */
 
@@ -362,7 +415,7 @@ button {
   }
 
   #warning {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: auto;
   }
 
@@ -395,3 +448,4 @@ button {
     bottom: 15%;
   }
 }
+

@@ -6,6 +6,7 @@ import Project from './pages/Project';
 import About from './pages/About';
 import Formations from './pages/Formations';
 import Contact from './layout/Contact';
+import Stack from './pages/Stack';
 
 //layout
 import Header from './layout/Header';
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<Home/>}/>
               <Route path="/Acceuil" element={<Home/>}/>
               <Route path="/About" element={<About/>}/>
+              <Route path="/Stack" element={<Stack/>}/>
               <Route path="/Project" element={<Project/>}/>
               <Route path="/Formations" element={<Formations/>}/>
               <Route path="/Contact" element={<Contact/>}/>

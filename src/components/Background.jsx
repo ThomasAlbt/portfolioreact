@@ -21,6 +21,14 @@ const getVantaColors = (pathname) => {
         baseColor: 0x1a0a0f,
         blurFactor: 0.90,
       };
+    case "/Stack":
+      return {
+        highlightColor: 0xd4a8c0,
+        midtoneColor: 0x7a6a8a,
+        lowlightColor: 0x2a2a4a,
+        baseColor: 0x1a0a0f,
+        blurFactor: 0.90,
+      };
     case "/Project":
       return {
         highlightColor: 0x8ae2f2,

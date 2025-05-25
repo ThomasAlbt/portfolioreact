@@ -16,6 +16,7 @@ const Header = () => {
                 <nav className={isOpen ? "open" : "hidden"}>
                     <NavLink onClick={() => setOpen(false)} to="/">Accueil</NavLink>
                     <NavLink onClick={() => setOpen(false)} to="/About">A propos</NavLink>
+                    <NavLink onClick={() => setOpen(false)} to="/Stack">Compétences</NavLink>
                     <NavLink onClick={() => setOpen(false)} to="/Project">Projets</NavLink>
                     <NavLink onClick={() => setOpen(false)} to="/Formations">Formations</NavLink>
                     <NavLink onClick={() => setOpen(false)} to="/Contact">Contact</NavLink>
