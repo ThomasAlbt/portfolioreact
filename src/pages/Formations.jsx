@@ -35,6 +35,13 @@ const Formations = () => {
                                 <li className="time-formation">{result.duration}</li>
                             </div>
                             <li className='desc'>{result.desc}</li>
+                            {result.link && (
+                                <li className='cert-link'>
+                                    <a href={result.link} target="_blank" rel="noopener noreferrer">
+                                        Voir la certification
+                                    </a>
+                                </li>
+                            )}
                             {result.current ? <li id='warning'><FontAwesomeIcon icon={faTriangleExclamation} color="orange"/> Ceci est ma formation actuelle dont je recherche une alternance. <FontAwesomeIcon icon={faTriangleExclamation} color="orange"/></li> : null }
                         </ul>
                     ))}

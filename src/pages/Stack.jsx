@@ -3,7 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import arrow from '../assets/svg/arrow.svg';
 
 const stacks = {
-    "Frontend": ["ReactJS", "HTML5", "CSS", "SCSS", "Tailwind", "JavaScript", "Vite", "VueJS"],
+    "Frontend": ["ReactJS", "HTML5", "CSS", "SCSS", "JavaScript", "Vite"],
     "Backend": ["NodeJS", "PHP", "MySQL", "CRUD", "REST API"],
     "Outils": ["Git", "GitHub", "Vercel"],
     "Autres": [

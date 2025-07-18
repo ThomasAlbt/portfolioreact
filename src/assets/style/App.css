@@ -369,6 +369,27 @@ button {
   }
 }
 
+@media (max-width: 600px) {
+  html, body {
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+  }
+  .embla {
+    height: 80svh;
+  }
+  .embla__container,
+  .embla__slide,
+  .embla__viewport {
+    height: 100%;
+    min-height: 100svh;
+    max-height: 100svh;
+  }
+  textarea {
+    height: 40svh;
+  }
+}
+
 /* ----- DESKTOP ----- */
 
 @media (min-width: 1025px) {
