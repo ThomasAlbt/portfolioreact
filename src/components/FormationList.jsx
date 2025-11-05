@@ -1,6 +1,14 @@
 
 const LIST = [
     {
+        title: "Développeur web en alternance",
+        desc: "Je poursuis une formation diplômante de développeur web chez OpenClassrooms, centrée sur la maîtrise des langages et outils essentiels du web moderne. Ce parcours, réalisé en alternance, me permet de consolider mes compétences en développement front-end et back-end tout en les appliquant directement en entreprise.",
+        school: "OpenClassrooms",
+        techno: ["JavaScript", "React", "Node.js"],
+        duration: "En recherche d'alternance",
+        current: true,
+    },
+    {
         title: "Développeur full-stack en alternance",
         desc: 'J\'ai débuté une formation de développeur web fullstack à la 3W Academy, axée sur les technologies modernes comme React et Node.js. Bien que je n\'aie pas pu la poursuivre jusqu\'au bout, faute d\'avoir trouvé une alternance à temps, ces trois mois m\'ont permis d\'acquérir de solides bases en développement front-end et back-end, ainsi qu\'une première expérience de projets concrets.',
         school: "3W Academy",

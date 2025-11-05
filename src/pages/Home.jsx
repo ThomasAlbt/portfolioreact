@@ -5,8 +5,8 @@ const Home = () => {
     return (
         <> 
             <div className="titles">
-                <p>Votre futur alternant</p>
-                <p>Developpeur Fullstack</p>
+                <p>Thomas Albert</p>
+                <p>Developpeur Fullstack Junior</p>
             </div>
         </>
     )

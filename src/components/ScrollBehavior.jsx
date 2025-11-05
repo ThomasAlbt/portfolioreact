@@ -7,14 +7,43 @@ const ScrollBehavior = ({ children }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const touchStartY = useRef(null);
+    const scrollCount = useRef(0);
+    const scrollDirection = useRef(null);
+    const scrollTimeout = useRef(null);
 
     useEffect(() => {
         const handleWheel = (e) => {
-            const currentIndex = routes.indexOf(location.pathname);
-            if (e.deltaY > 0 && currentIndex < routes.length - 1) {
-                navigate(routes[currentIndex + 1]);
-            } else if (e.deltaY < 0 && currentIndex > 0) {
-                navigate(routes[currentIndex - 1]);
+            e.preventDefault();
+            
+            const currentDirection = e.deltaY > 0 ? 'down' : 'up';
+            
+            if (scrollDirection.current !== currentDirection) {
+                scrollCount.current = 0;
+                scrollDirection.current = currentDirection;
+            }
+
+            scrollCount.current++;
+
+            if (scrollTimeout.current) {
+                clearTimeout(scrollTimeout.current);
+            }
+            
+            if (scrollCount.current >= 3) {
+                const currentIndex = routes.indexOf(location.pathname);
+                
+                if (currentDirection === 'down' && currentIndex < routes.length - 1) {
+                    navigate(routes[currentIndex + 1]);
+                } else if (currentDirection === 'up' && currentIndex > 0) {
+                    navigate(routes[currentIndex - 1]);
+                }
+                
+                scrollCount.current = 0;
+                scrollDirection.current = null;
+            } else {
+                scrollTimeout.current = setTimeout(() => {
+                    scrollCount.current = 0;
+                    scrollDirection.current = null;
+                }, 1000);
             }
         };
 
@@ -46,6 +75,9 @@ const ScrollBehavior = ({ children }) => {
             window.removeEventListener("wheel", handleWheel);
             window.removeEventListener("touchstart", handleTouchStart);
             window.removeEventListener("touchend", handleTouchEnd);
+            if (scrollTimeout.current) {
+                clearTimeout(scrollTimeout.current);
+            }
         };
         // eslint-disable-next-line
     }, [location.pathname, navigate]);
