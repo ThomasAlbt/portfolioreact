@@ -7,6 +7,7 @@ import About from './pages/About';
 import Formations from './pages/Formations';
 import Contact from './layout/Contact';
 import Stack from './pages/Stack';
+import Loading from './components/Loading';
 
 //layout
 import Header from './layout/Header';
@@ -20,25 +21,31 @@ import './assets/style/Reset.css';
 import './assets/style/App.css';
 
 function App() {
-  return (
-    <>
-        <BrowserRouter>
-          <VantaBackground/>
-          <ScrollBehavior>
-            <Header/>
-            <Routes>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/Acceuil" element={<Home/>}/>
-              <Route path="/About" element={<About/>}/>
-              <Route path="/Stack" element={<Stack/>}/>
-              <Route path="/Project" element={<Project/>}/>
-              <Route path="/Formations" element={<Formations/>}/>
-              <Route path="/Contact" element={<Contact/>}/>
-            </Routes>
-          </ScrollBehavior>
-        </BrowserRouter>
-    </>
-  )
+  
+  if(Loading()) {
+    return(
+      <Loading/>
+    )
+  } else {
+    return (
+      <>
+          <BrowserRouter>
+          <ScrollBehavior/>
+            <VantaBackground/>
+              <Header/>
+              <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/Acceuil" element={<Home/>}/>
+                <Route path="/About" element={<About/>}/>
+                <Route path="/Stack" element={<Stack/>}/>
+                <Route path="/Project" element={<Project/>}/>
+                <Route path="/Formations" element={<Formations/>}/>
+                <Route path="/Contact" element={<Contact/>}/>
+              </Routes>
+          </BrowserRouter>
+      </>
+    )
+  }
 }
 
 export default App

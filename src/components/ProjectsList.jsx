@@ -14,7 +14,7 @@ const LIST = [
     {
         title: "Dummy API",
         desc: "Je travaille actuellement sur une API pour accompagner la Dummy Marketplace. Le projet est encore en gros WIP et nécessite l'ajout de fonctionnalités avancées de tracking de statistiques liées à Dummy Marketplace. ",
-        techno: ["Node.js", "Express", "REST API", "JSON", "Tracking stats"],
+        techno: ["Node.js", "Express", "REST API", "JSON"],
         timeTook: "6 jours",
         stillWorkin: true,
         satisfaction: 4,
@@ -23,7 +23,7 @@ const LIST = [
     {
         title: "Portfolio refait en React",
         desc: 'J\'ai entièrement refait mon portfolio en utilisant React, en m\'inspirant du design des sites web A24. Ce projet m\'a permis de travailler intensément sur le design et d\'améliorer la gestion de l\'arborescence par rapport à mon premier projet React, grâce aux connaissances acquises lors de ma première semaine de cours sur ce framework.',
-        techno: ["React natif"],
+        techno: ["React"],
         timeTook: "5 jours",
         stillWorkin: true,
         satisfaction: 5,
@@ -43,7 +43,7 @@ const LIST = [
     {
         title: "ReactF1",
         desc: 'Mon premier projet en React, réalisé en autodidacte, consistait à travailler avec l\'API OpenF1. Ce projet m\'a permis d\'apprendre les bases de React et de comprendre comment intégrer des API externes dans une application web.',
-        techno: ["Native React", "API OpenF1"],
+        techno: ["React", "API OpenF1"],
         timeTook: "3 jours",
         stillWorkin: false,
         satisfaction: 7,

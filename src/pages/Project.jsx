@@ -34,7 +34,7 @@ const Project = () => {
                                 <li className='git'><a href={result.github} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} color="white"/></a></li>
                                 <li id='link'>{result.link ? <a href={result.link} target='blank'>Regarder par vous même !</a> : <p>WIP</p>}</li>
                             </div>
-                            <li className="time">{result.timeTook}</li>
+                            {/* <li className="time">{result.timeTook}</li> */}
                             <li className='desc'>{result.desc}<br/>{result.figma ? <a href={result.figma} target='blank'>Le lien Figma !</a> : null}</li>
                         </ul>
                     ))}
